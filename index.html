@@ -7482,6 +7482,28 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Solving-the-Diffusion-Equation-in-MHD-along-the-z-axis">Solving the Diffusion Equation in MHD along the z-axis<a class="anchor-link" href="#Solving-the-Diffusion-Equation-in-MHD-along-the-z-axis">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Theory">Theory<a class="anchor-link" href="#Theory">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The mean field induction equation is given by:
      $$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\epsilon -\eta\nabla\times\bar{B})$$</p>
 </div>
@@ -7526,7 +7548,18 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Defining-Functions">Defining Functions<a class="anchor-link" href="#Defining-Functions">¶</a></h1>
+<h2 id="Code">Code<a class="anchor-link" href="#Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Defining-Functions">Defining Functions<a class="anchor-link" href="#Defining-Functions">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7555,7 +7588,7 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 <span class="o">%</span><span class="k">matplotlib</span> widget
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="c1"># warnings.simplefilter(action='ignore', category=RuntimeWarning)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7696,7 +7729,7 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Applying-specific-Boundary-Conditions">Applying specific Boundary Conditions<a class="anchor-link" href="#Applying-specific-Boundary-Conditions">¶</a></h1>
+<h3 id="Applying-specific-Boundary-Conditions">Applying specific Boundary Conditions<a class="anchor-link" href="#Applying-specific-Boundary-Conditions">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7707,7 +7740,7 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">1) $B_{0r}=\frac{3z}{z_{max}}+sin\left(\frac{3z}{z_{max}}\right)e^{-(\frac{3z}{z_{max}})^2}$<a class="anchor-link" href="#1)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">¶</a></h2><h2 id="$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">$\;\;\,$ $B_{0\phi}=sin\left(\frac{\pi z}{z_{max}}\right)$<a class="anchor-link" href="#$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">¶</a></h2>
+<h3 id="1)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">1) $B_{0r}=\frac{3z}{z_{max}}+sin\left(\frac{3z}{z_{max}}\right)e^{-(\frac{3z}{z_{max}})^2}$<a class="anchor-link" href="#1)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">¶</a></h3><h3 id="$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">$\;\;\,$ $B_{0\phi}=sin\left(\frac{\pi z}{z_{max}}\right)$<a class="anchor-link" href="#$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7808,6 +7841,17 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Plotting B in 3d</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7870,14 +7914,6 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\oomme\AppData\Local\Temp\ipykernel_2572\2250905510.py:2: RuntimeWarning: invalid value encountered in divide
-  return np.sqrt(B_r**2+B_phi**2), np.where(np.abs(B_r) &gt; 1e-1, np.arctan(B_phi/B_r)*180/np.pi, 90)
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
@@ -7991,14 +8027,6 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\oomme\AppData\Local\Temp\ipykernel_2572\2250905510.py:2: RuntimeWarning: invalid value encountered in divide
-  return np.sqrt(B_r**2+B_phi**2), np.where(np.abs(B_r) &gt; 1e-1, np.arctan(B_phi/B_r)*180/np.pi, 90)
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: inline-block;">
 <div class="jupyter-widgets widget-label" style="text-align: center;">
@@ -8024,7 +8052,7 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">2) $B_{0r}=\frac{3z}{z_{max}}+sin\left(\frac{3z}{z_{max}}\right)e^{-(\frac{3z}{z_{max}})^2}$<a class="anchor-link" href="#2)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">¶</a></h2><h2 id="$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">$\;\;\,$ $B_{0\phi}=sin\left(\frac{\pi z}{z_{max}}\right)$<a class="anchor-link" href="#$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">¶</a></h2>
+<h3 id="2)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">2) $B_{0r}=\frac{3z}{z_{max}}+sin\left(\frac{3z}{z_{max}}\right)e^{-(\frac{3z}{z_{max}})^2}$<a class="anchor-link" href="#2)-$B_%7B0r%7D=%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D+sin%5Cleft(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D%5Cright)e%5E%7B-(%5Cfrac%7B3z%7D%7Bz_%7Bmax%7D%7D)%5E2%7D$">¶</a></h3><h3 id="$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">$\;\;\,$ $B_{0\phi}=sin\left(\frac{\pi z}{z_{max}}\right)$<a class="anchor-link" href="#$%5C;%5C;%5C,$-$B_%7B0%5Cphi%7D=sin%5Cleft(%5Cfrac%7B%5Cpi-z%7D%7Bz_%7Bmax%7D%7D%5Cright)$">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8189,14 +8217,6 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\oomme\AppData\Local\Temp\ipykernel_2572\2250905510.py:2: RuntimeWarning: invalid value encountered in divide
-  return np.sqrt(B_r**2+B_phi**2), np.where(np.abs(B_r) &gt; 1e-1, np.arctan(B_phi/B_r)*180/np.pi, 90)
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: inline-block;">
 <div class="jupyter-widgets widget-label" style="text-align: center;">
@@ -8306,14 +8326,6 @@ $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\oomme\AppData\Local\Temp\ipykernel_2572\2250905510.py:2: RuntimeWarning: invalid value encountered in divide
-  return np.sqrt(B_r**2+B_phi**2), np.where(np.abs(B_r) &gt; 1e-1, np.arctan(B_phi/B_r)*180/np.pi, 90)
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
