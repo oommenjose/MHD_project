@@ -7482,7 +7482,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Solving-the-Diffusion-Equation-in-MHD-along-the-z-axis">Solving the Diffusion Equation in MHD along the z-axis<a class="anchor-link" href="#Solving-the-Diffusion-Equation-in-MHD-along-the-z-axis">¶</a></h1>
+<h1 id="Solving-the-Mean-Field-Galactic-Dynamo-Equation-along-the-z-axis">Solving the Mean-Field Galactic Dynamo Equation along the z-axis<a class="anchor-link" href="#Solving-the-Mean-Field-Galactic-Dynamo-Equation-along-the-z-axis">¶</a></h1>
 </div>
 </div>
 </div>
@@ -7494,6 +7494,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Theory">Theory<a class="anchor-link" href="#Theory">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Diffussion-Equation">Diffussion Equation<a class="anchor-link" href="#Diffussion-Equation">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7534,7 +7545,18 @@ Assuming $\bar{B}$ to be axisymmetric all terms with $\frac{\partial}{\partial\p
 Given my project was to solve for variation of B along z I will also be neglecting all $\frac{\partial}{\partial r}$ which gives us the following three equations
 $$\frac{\partial \bar{B}_r}{\partial t}=\beta\frac{\partial^2 \bar{B}_r}{\partial z^2},\qquad \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{\partial^2 \bar{B}_\phi}{\partial z^2},\qquad \frac{\partial \bar{B}_z}{\partial t}=\beta\frac{\partial^2 \bar{B}_z}{\partial z^2}$$
 Let's define $\bar{B}_{total}=\sqrt{\bar{B}_r^2+\bar{B}_\phi^2}$ we would be finding the variation of $\bar{B}_{total}$ with time
-To numerically solve this equation I will be using the Crank Nickolson method which is a combination of explicit and implicit meathods with which has the advantage of being unconditionally stable with with an error of $\mathcal{O}(k^2)+\mathcal{O}(h^2)$ where k and h are the time step and spatial step size respectively.
+<br/>We will also define pitch angle which is defined as $\theta=\frac{B_\phi}{B_r}$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Numerical-integration">Numerical integration<a class="anchor-link" href="#Numerical-integration">¶</a></h3><p>To numerically solve this equation I will be using the Crank Nickolson method which is a combination of explicit and implicit meathods with which has the advantage of being unconditionally stable with with an error of $\mathcal{O}(k^2)+\mathcal{O}(h^2)$ where k and h are the time step and spatial step size respectively.
 In matrix form Crank–Nicolson Method can be written as:
 $$Au_j=Bu_{j-1}+sigma*(s_{j-1}+s_j)$$</p>
 </div>
