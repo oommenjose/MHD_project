@@ -63,7 +63,7 @@
 
 				<article id="main" class="container special">
 				<p>
-					
+					Dynamo action, the process by which magnetic fields of celestial bodies are generated through electromagnetic induction associated with the motion of conducting fluids, has been a subject of extensive study in astrophysics. Differential rotation in galactic discs, creates a powerful shear along the radial direction, known as the \(\omega\)-effect. This shear facilitates the stretching of radial magnetic field lines in the azimuthal direction.Turbulent motions at smaller scales, give rise to cyclonic flows and generate poloidal magnetic fields, a phenomenon referred to as the \(\alpha\)-effect. Combining these two large-scale and small-scale effects, gives us \(\alpha\)–\(\omega\) type of dynamo, which can be used account for the generation of galactic magnetic fields.
 				</p>
 				</article>
 			</div>
@@ -140,15 +140,15 @@
 					</header>
 					<p>Like in the previous section we start with the mean-field equation
 						$$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\alpha\bar{B} -\beta\nabla\times\bar{B})$$</p>
-						<p>If we assume $\beta$ to be independent of position and using solenoidality condition $\nabla\cdot B=0$ as shown in part 1 we can simplify the equation to:
+						<p>If we assume \(\beta\) to be independent of position and using solenoidality condition \(\nabla\cdot B=0\) as shown in part 1 we can simplify the equation to:
 						$$\dfrac{\partial \bar{B}}{\partial t} = \nabla \times \left( \bar{V} \times \bar{B} \right) + \nabla \times \left(\alpha \bar{B} \right) - \beta \left( \nabla \times \nabla \times \bar{B} \right) $$
-						$\bar{V}$ can be written in terms of its components in cylindrical coordinates as
+						\(\bar{V}\) can be written in terms of its components in cylindrical coordinates as
 						$$\bar{V}=\bar{V}_r(r)\hat{r}+r\Omega(r)\hat{\phi}+\bar{V}_z(z)\hat{z}$$
-						Substituting for $\bar{V}$ in the mean-field equation and solving for each component in cylindrical coordinates taking azimuthal symmetry we get</p>
-						$$ \frac{\partial \bar{B}_r}{\partial t} = V_r \frac{\partial \bar{B}_z}{\partial z} - \frac{\partial (V_z \bar{B}_r)}{\partial z} - \frac{\partial (\alpha \bar{B}_\phi)}{\partial z} + \beta \left[ \frac{\partial^2 \bar{B}_r}{\partial z^2} + \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r} \left( r \bar{B}_r \right) \right) \right] $$$$ \frac{\partial \bar{B}_\phi}{\partial t} = r \Omega \frac{\partial \bar{B}_z}{\partial z} - \frac{\partial (V_z \bar{B}_\phi)}{\partial z} - \frac{\partial (V_r \bar{B}_\phi)}{\partial r} + \frac{\partial (r \Omega \bar{B}_r)}{\partial r} + \frac{\partial (\alpha \bar{B}_r)}{\partial z} - \frac{\partial (\alpha \bar{B}_z)}{\partial r} + \beta \left[ \frac{\partial^2 \bar{B}_\phi}{\partial z^2} + \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r} \left( r \bar{B}_\phi \right) \right) \right] $$<p>Using the $\alpha\Omega$ approximation and inserting $q=-\frac{r}{\Omega}\frac{\partial\Omega}{\partial r}$ we obtain
+						Substituting for \(\bar{V}\) in the mean-field equation and solving for each component in cylindrical coordinates taking azimuthal symmetry we get</p>
+						$$ \frac{\partial \bar{B}_r}{\partial t} = V_r \frac{\partial \bar{B}_z}{\partial z} - \frac{\partial (V_z \bar{B}_r)}{\partial z} - \frac{\partial (\alpha \bar{B}_\phi)}{\partial z} + \beta \left[ \frac{\partial^2 \bar{B}_r}{\partial z^2} + \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r} \left( r \bar{B}_r \right) \right) \right] $$$$ \frac{\partial \bar{B}_\phi}{\partial t} = r \Omega \frac{\partial \bar{B}_z}{\partial z} - \frac{\partial (V_z \bar{B}_\phi)}{\partial z} - \frac{\partial (V_r \bar{B}_\phi)}{\partial r} + \frac{\partial (r \Omega \bar{B}_r)}{\partial r} + \frac{\partial (\alpha \bar{B}_r)}{\partial z} - \frac{\partial (\alpha \bar{B}_z)}{\partial r} + \beta \left[ \frac{\partial^2 \bar{B}_\phi}{\partial z^2} + \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r} \left( r \bar{B}_\phi \right) \right) \right] $$<p>Using the \(\alpha\Omega\) approximation and inserting \(q=-\frac{r}{\Omega}\frac{\partial\Omega}{\partial r}\) we obtain
 						$$ \frac{\partial \bar{B}_r}{\partial t} = - \frac{\partial (\alpha \bar{B}_\phi)}{\partial z} + \beta \frac{\partial^2 \bar{B}_r}{\partial z^2} $$
 						$$ \frac{\partial \bar{B}_\phi}{\partial t} = -q \Omega \bar{B}_r + \beta \frac{\partial^2 \bar{B}_\phi}{\partial z^2} $$
-						The function $\Omega(r)$ is taken as,
+						The function \(\Omega(r)\) is taken as,
 						$$\Omega=\frac{\Omega_0}{\sqrt{1+\left(\frac{r}{r_0}\right)^2}}$$</p>
 						<h3 id="Dynamo-number"><a class="anchor-link" href="#Dynamo-number">Dynamo number</a></h3><p>Dynamo number is defined as,
 						$$ D = − \frac{\alpha_0 q \Omega h^3}{\beta^2} $$
@@ -164,7 +164,82 @@
 				</article>
 
 			</div>
+			<section id="part1">
+				<header>
+					<h2><strong><a href="#P1">Part 1</a></strong></h2>
+				</header>
+			</section>
+			<div class="wrapper style2">
 
+				<article id="main" class="container special">
+					<header>
+						<h2><a href="#T1">Theory</a></h2>
+					</header>
+					<p>The mean field induction equation is given by:
+						$$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\epsilon -\eta\nabla\times\bar{B})$$
+						Taking the first order smoothing approximation we can write \(\epsilon=\alpha\bar{B}-\eta_t\nabla\times\bar{B}\)
+				   $$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\alpha\bar{B} -(\eta_t+\eta)\nabla\times\bar{B})$$<br>
+				   If we ignore the magnetic induction term and the alpha term diffusion equation can be writen as:
+					   $$\frac{\partial \bar{B}}{\partial t}=-\nabla \times \beta\nabla \times \bar{B}$$
+				   where \(\beta=\eta_t+\eta\).
+				   If we assume beta to be independent of position we can write:
+					   $$\beta\nabla \times \nabla \times \bar{B}=\beta\left[\nabla(\nabla\cdot \bar{B})-\nabla^2 \bar{B}\right]$$
+				   Using the solenoidality condition \(\nabla\cdot B=0\) we get
+					$$\frac{\partial \bar{B}}{\partial t}=\beta\nabla^2 \bar{B}$$
+				   Writing the above equation componenet wise in cylindrical coordinates we get:
+				   $$ \frac{\partial \bar{B}_r}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_r\right)-\frac{2}{r^2}\frac{\partial \bar{B}_\phi}{\partial \phi}+\beta \frac{\partial^2 \bar{B}_r}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_r\right)\right],$$
+				   $$ \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_\phi\right)+\frac{2}{r^2}\frac{\partial \bar{B}_\phi}{\partial \phi}+\beta \frac{\partial^2 \bar{B}_\phi}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_\phi\right)\right],$$
+				   $$\frac{\partial \bar{B}_z}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_z\right)+\beta \frac{\partial^2 \bar{B}_z}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_z\right)\right],$$
+				   Assuming \(\bar{B}\) to be axisymmetric all terms with \(\frac{\partial}{\partial\phi}\) are zero<br>
+				   Given my project was to solve for variation of B along z I will also be neglecting all \(\frac{\partial}{\partial r}\) which gives us the following three equations
+				   $$\frac{\partial \bar{B}_r}{\partial t}=\beta\frac{\partial^2 \bar{B}_r}{\partial z^2},\qquad \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{\partial^2 \bar{B}_\phi}{\partial z^2},\qquad \frac{\partial \bar{B}_z}{\partial t}=\beta\frac{\partial^2 \bar{B}_z}{\partial z^2}$$
+				   The magnetic diffusion coefficient \(\beta\) is given by,
+				   $$\beta\approx \frac{1}{3}\tau v_{rms}^2$$
+				   where typical values of faraday time and velocity for a galaxy are \(\tau\approx 10Myr\) \(v_{rms}\approx 10km/s\) respectively which when substituted in the above equation gives a typical value for \(\beta=34 pc^2/Myr\)</p>
+				   <h3 id="Total-Magnetic-field-magnitude-and-pitch-angle"><a class="anchor-link" href="#Total-Magnetic-field-magnitude-and-pitch-angle">Total Magnetic field magnitude and pitch angle</a></h3>
+				   <p>Let's define \(\bar{B}_{total}=\sqrt{\bar{B}_r^2+\bar{B}_\phi^2}\) we would be finding the variation of \(\bar{B}_{total}\) with time
+				   <br>We will also define pitch angle which is defined as \(P_b=tan^{-1}\left(\frac{\bar{B}_r}{\bar{B}_\phi}\right)\)</p>
+				   <h3 id="Magnetic-decay-constant"><a class="anchor-link" href="#Magnetic-decay-constant">Magnetic decay constant</a></h3>
+				   <p>The total magnetic field can be represented by the following equation
+				   $$\bar{B}_{total}(z,t)=\bar{B}(z)exp(\gamma t)$$<br>
+				   where \(\bar{B}(z)\) represents all the variation of magnetic field spatially and \(\gamma\) represents the magnetic decay constant which we will be calculating</p>
+				   <h3 id="Numerical-integration"><a class="anchor-link" href="#Numerical-integration">Numerical Integration</a></h3><p>To numerically solve this equation I will be using the Crank Nickolson method which is a combination of explicit and implicit meathods with which has the advantage of being unconditionally stable with with an error of \(\mathcal{O}(k^2)+\mathcal{O}(h^2)\) where k and h are the time step and spatial step size respectively.<br>
+				   Crank–Nicolson Method uses the average of both previous and present time-step to numerically solve the problem. The discretized form of the equation is as follows.
+				   $$ \frac{B^{j+1}_{i} - B^{j}_{i}}{dt} = \dfrac{\beta}{2} \: \left( \dfrac{B^{j+1}_{i+1} - 2B^{j+1}_{i} + B^{j+1}_{i-1}}{dz^2} \right) + \dfrac{\beta}{2} \: \left( \dfrac{B^{j}_{i+1} - 2B^{j}_{i} + B^{j}_{i-1}}{dz^2} \right) $$<br>where present time-step is represented by \((j+1)\) and the past time-step \((j)\) and \((i)\) denoted the spatial index of a particular grid point. Rearranging we get
+				   $$ B^{j+1}_{i} - \dfrac{\beta \: dt}{2 \: dz^2} \: \left( B^{j+1}_{i+1} - 2B^{j+1}_{i} + B^{j+1}_{i-1} \right) = B^{j}_{i} + \dfrac{\beta \: dt}{2 \: dz^2} \: \left( B^{j}_{i+1} - 2B^{j}_{i} + B^{j}_{i-1} \right) $$<br>
+				   The above equation can be written in matrix form to be,
+				   $$ PB^{j+1} = QB^{j} $$<br>
+				   where \(P\) and \(Q\) are matrices of the form,
+				   $$ P=\left[\begin{array}{ccccc}1+2 \sigma &amp; -\sigma &amp; 0 &amp; \cdots &amp; 0 \\ -\sigma &amp; 1+2 \sigma &amp; -\sigma &amp; \ddots &amp; \vdots \\ 0 &amp; -\sigma &amp; 1+2 \sigma &amp; \ddots &amp; 0 \\ \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; -\sigma \\ 0 &amp; \cdots &amp; 0 &amp; -\sigma &amp; 1+2 \sigma\end{array}\right]     \qquad \qquad      Q=\left[\begin{array}{ccccc}1-2 \sigma &amp; \sigma &amp; 0 &amp; \cdots &amp; 0 \\ \sigma &amp; 1-2 \sigma &amp; \sigma &amp; \ddots &amp; \vdots \\ 0 &amp; \sigma &amp; 1-2 \sigma &amp; \ddots &amp; 0 \\ \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \sigma \\ 0 &amp; \cdots &amp; 0 &amp; \sigma &amp; 1-2 \sigma\end{array}\right] $$<br>
+				   where \(\sigma=\dfrac{\beta \: dt}{2 \: dz^2}\)<br>
+				   \(B^{j+1}\) can be obtained by multiplying the matrix equation throughout with \(M^{-1}\) with resulting equation being
+				   $$B^{j+1} = P^{-1}QB^{j} $$<br></p>
+				   <p>The simulation grid is taken to be from -150 pc to 150 pc resembling the thickness of milky way galaxy disk which is around 1000 light years or 300pc with step size \(dz=0.1\)<br>
+				   <img alt="No description has been provided for this image" title="Image source: [https://thescientificodyssey.typepad.com/my-blog/2017/08/episode-339-harlow-shapley-and-finding-our-place-in-the-galaxy.html]" src="https://thescientificodyssey.typepad.com/.a/6a01b8d0788cce970c01b8d29d8bf6970c-pi"/><br>
+				   
+				   The temporal grid range is taken according to the seed field magnitude such that there are 100 steps within the temporal range</p>
+				</article>
+
+			</div>
+			<section id="part3">
+				<header>
+					<h2><strong><a href="#P3">Part 3</a></strong></h2>
+					
+				</header>
+			</section>
+		<!-- Features -->
+		<div class="wrapper style2">
+
+			<article id="main" class="container special">
+				<header>
+					<h2><a href="#T3">Results</a></h2>
+				</header>
+				<p>
+					In this section we will be comparing the solutions, accuracy, runtime for two different cases. In the first case we would be running the solver for just half-grid assuming quadrupolar symmetry. While in the second case we would be running the solver on the entire grid.
+				</p>
+			</article>
+
+		</div>
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
