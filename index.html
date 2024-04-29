@@ -63,27 +63,27 @@
 
 				<article id="main" class="container special">
 				<p>
-					Dynamo action, the process by which magnetic fields of celestial bodies are generated through electromagnetic induction associated with the motion of conducting fluids, has been a subject of extensive study in astrophysics. The theoretical underpinning of MHD relies on a sophisticated framework of equations, amalgamating the principles of fluid dynamics and electromagnetism. Within this framework, the complex interaction of magnetized plasmas in galactic environments unfolds, driven by dynamo processes fueled by fluid motions like turbulence and differential rotation. Differential rotation in galactic discs, creates a powerful shear along the radial direction, known as the \(\omega\)-effect. This shear facilitates the stretching of radial magnetic field lines in the azimuthal direction.Turbulent motions at smaller scales, give rise to cyclonic flows and generate poloidal magnetic fields, a phenomenon referred to as the \(\alpha\)-effect. Combining these two large-scale and small-scale effects, gives us \(\alpha\)–\(\omega\) type of dynamo, which can be used account for the generation of galactic magnetic fields.
+					Dynamo action is the process by which magnetic fields of celestial bodies are generated through electromagnetic induction associated with the motion of conducting fluids. It has been a subject of extensive study in astrophysics.  Differential rotation in galactic discs, creates a powerful shear along the radial direction, known as the \(\omega\)-effect. This shear facilitates the stretching of radial magnetic field lines in the azimuthal direction.Turbulent motions at smaller scales, give rise to cyclonic flows and generate poloidal magnetic fields, a phenomenon referred to as the \(\alpha\)-effect. Combining these two large-scale and small-scale effects, gives us \(\alpha\)–\(\omega\) type of dynamo, which can be used account for the generation of galactic magnetic fields. This dynamo could be simulated by using the mean field induction equation in magnetohydrodynamics(MHD).In this project the mean field equation is numerically solved with certain approximations to find the variation of magnetic field along the z direction of a galaxy.
 				</p>
 				</article>
 			</div>
 			<!-- Part1 -->
 				<section id="part1">
 					<header>
-						<h2><strong><a href="#P1">Part 1</a></strong></h2>
+						<h2 id="p1"><strong><a href="#p1">Part 1</a></strong></h2>
 					</header>
 				</section>
 				<div class="wrapper style2">
 
 					<article id="main" class="container special">
 						<header>
-							<h2><a href="#T1">Theory</a></h2>
+							<h2 id="t1"><a href="#t1">Methods</a></h2>
 						</header>
-						<p>The mean field induction equation is given by:
+						<p>In a galaxy the exolution of the magnetic field can be described by the mean field induction equation which can be written as:
 							$$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\epsilon -\eta\nabla\times\bar{B})$$
 							Taking the first order smoothing approximation we can write \(\epsilon=\alpha\bar{B}-\eta_t\nabla\times\bar{B}\)
 					   $$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\alpha\bar{B} -(\eta_t+\eta)\nabla\times\bar{B})$$<br>
-					   If we ignore the magnetic induction term and the alpha term diffusion equation can be writen as:
+					   If we ignore the magnetic induction term and the alpha term the equation can be writen as:
 						   $$\frac{\partial \bar{B}}{\partial t}=-\nabla \times \beta\nabla \times \bar{B}$$
 					   where \(\beta=\eta_t+\eta\).
 					   If we assume beta to be independent of position we can write:
@@ -94,21 +94,21 @@
 					   $$ \frac{\partial \bar{B}_r}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_r\right)-\frac{2}{r^2}\frac{\partial \bar{B}_\phi}{\partial \phi}+\beta \frac{\partial^2 \bar{B}_r}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_r\right)\right],$$
 					   $$ \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_\phi\right)+\frac{2}{r^2}\frac{\partial \bar{B}_\phi}{\partial \phi}+\beta \frac{\partial^2 \bar{B}_\phi}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_\phi\right)\right],$$
 					   $$\frac{\partial \bar{B}_z}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_z\right)+\beta \frac{\partial^2 \bar{B}_z}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_z\right)\right],$$
-					   Assuming \(\bar{B}\) to be axisymmetric all terms with \(\frac{\partial}{\partial\phi}\) are zero<br>
-					   Given my project was to solve for variation of B along z I will also be neglecting all \(\frac{\partial}{\partial r}\) which gives us the following three equations
-					   $$\frac{\partial \bar{B}_r}{\partial t}=\beta\frac{\partial^2 \bar{B}_r}{\partial z^2},\qquad \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{\partial^2 \bar{B}_\phi}{\partial z^2},\qquad \frac{\partial \bar{B}_z}{\partial t}=\beta\frac{\partial^2 \bar{B}_z}{\partial z^2}$$
+					   Assuming \(\bar{B}\) to be axisymmetric (all terms with \(\frac{\partial}{\partial\phi}\) are taken to be zero)<br>
+					   Given my project was to solve for variation of B along z I will also be neglecting all \(\frac{\partial}{\partial r}\) which gives us the following two equations
+					   $$\frac{\partial \bar{B}_r}{\partial t}=\beta\frac{\partial^2 \bar{B}_r}{\partial z^2},\qquad \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{\partial^2 \bar{B}_\phi}{\partial z^2}$$
 					   The magnetic diffusion coefficient \(\beta\) is given by,
 					   $$\beta\approx \frac{1}{3}\tau v_{rms}^2$$
-					   where typical values of faraday time and velocity for a galaxy are \(\tau\approx 10Myr\) \(v_{rms}\approx 10km/s\) respectively which when substituted in the above equation gives a typical value for \(\beta=34 pc^2/Myr\)</p>
+					   where typical values of faraday time and velocity for a galaxy are \(\tau\approx 10Myr\), \(v_{rms}\approx 10km/s\) which when substituted in the above equation gives a typical value for \(\beta=34 pc^2/Myr\)</p>
 					   <h3 id="Total-Magnetic-field-magnitude-and-pitch-angle"><a class="anchor-link" href="#Total-Magnetic-field-magnitude-and-pitch-angle">Total Magnetic field magnitude and pitch angle</a></h3>
-					   <p>Let's define \(\bar{B}_{total}=\sqrt{\bar{B}_r^2+\bar{B}_\phi^2}\) we would be finding the variation of \(\bar{B}_{total}\) with time
+					   <p>\(\bar{B}_{total}\) is the vector sum of the \(\bar{B}_{r}\) and \(\bar{B}_{phi}\) components and is given by \(\bar{B}_{total}=\sqrt{\bar{B}_r^2+\bar{B}_\phi^2}\) we would be finding the variation of \(\bar{B}_{total}\) with time
 					   <br>We will also define pitch angle which is defined as \(P_b=tan^{-1}\left(\frac{\bar{B}_r}{\bar{B}_\phi}\right)\)</p>
 					   <h3 id="Magnetic-decay-constant"><a class="anchor-link" href="#Magnetic-decay-constant">Magnetic decay constant</a></h3>
 					   <p>The total magnetic field can be represented by the following equation
 					   $$\bar{B}_{total}(z,t)=\bar{B}(z)exp(\gamma t)$$<br>
 					   where \(\bar{B}(z)\) represents all the variation of magnetic field spatially and \(\gamma\) represents the magnetic decay constant which we will be calculating</p>
 					   <h3 id="Numerical-integration"><a class="anchor-link" href="#Numerical-integration">Numerical Integration</a></h3><p>To numerically solve this equation I will be using the Crank Nickolson method which is a combination of explicit and implicit meathods with which has the advantage of being unconditionally stable with with an error of \(\mathcal{O}(k^2)+\mathcal{O}(h^2)\) where k and h are the time step and spatial step size respectively.<br>
-					   Crank–Nicolson Method uses the average of both previous and present time-step to numerically solve the problem. The discretized form of the equation is as follows.
+					   Crank-Nicolson Method uses the average of both previous and present time-step to numerically solve the problem. The discretized form of the diffusion equation is as follows.
 					   $$ \frac{B^{j+1}_{i} - B^{j}_{i}}{dt} = \dfrac{\beta}{2} \: \left( \dfrac{B^{j+1}_{i+1} - 2B^{j+1}_{i} + B^{j+1}_{i-1}}{dz^2} \right) + \dfrac{\beta}{2} \: \left( \dfrac{B^{j}_{i+1} - 2B^{j}_{i} + B^{j}_{i-1}}{dz^2} \right) $$<br>where present time-step is represented by \((j+1)\) and the past time-step \((j)\) and \((i)\) denoted the spatial index of a particular grid point. Rearranging we get
 					   $$ B^{j+1}_{i} - \dfrac{\beta \: dt}{2 \: dz^2} \: \left( B^{j+1}_{i+1} - 2B^{j+1}_{i} + B^{j+1}_{i-1} \right) = B^{j}_{i} + \dfrac{\beta \: dt}{2 \: dz^2} \: \left( B^{j}_{i+1} - 2B^{j}_{i} + B^{j}_{i-1} \right) $$<br>
 					   The above equation can be written in matrix form to be,
@@ -119,15 +119,75 @@
 					   \(B^{j+1}\) can be obtained by multiplying the matrix equation throughout with \(M^{-1}\) with resulting equation being
 					   $$B^{j+1} = P^{-1}QB^{j} $$<br></p>
 					   <p>The simulation grid is taken to be from -150 pc to 150 pc resembling the thickness of milky way galaxy disk which is around 1000 light years or 300pc with step size \(dz=0.1\)<br>
-					   <img alt="No description has been provided for this image" title="Image source: [https://thescientificodyssey.typepad.com/my-blog/2017/08/episode-339-harlow-shapley-and-finding-our-place-in-the-galaxy.html]" src="https://thescientificodyssey.typepad.com/.a/6a01b8d0788cce970c01b8d29d8bf6970c-pi"/><br>
+					   
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" alt="No description has been provided for this image" title="Image source: [https://thescientificodyssey.typepad.com/my-blog/2017/08/episode-339-harlow-shapley-and-finding-our-place-in-the-galaxy.html]" src="https://thescientificodyssey.typepad.com/.a/6a01b8d0788cce970c01b8d29d8bf6970c-pi">
+							</div><br>
 					   
 					   The temporal grid range is taken according to the seed field magnitude such that there are 100 steps within the temporal range</p>
 					</article>
+					<div class="wrapper style2"></div>
+					<article id="main" class="container special">
+						<h2 id="r1" style="text-align: center;"><a class="anchor-link" href="#r1">Results</a></h2>
+						<h3 id="c11"><a class="anchor-link" href="#c11">Case:1</a></h3>
+						<p>
+							\(\beta=34pc^2/Myr\)<br>
+							Seed Field:<br>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="images_sim/seed_field11.png" alt="Seed Field Image">
+							</div>
+							Variation of \(B_{total}\) with time<br>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="animations/B_t11.gif" alt="B_t11 Animation">
+							</div>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="images_sim/B_t11_heat.png" alt="B_t11 Heat Image">
+							</div>
+							Decay rate:0.0386
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="images_sim/decay_rate11.png" alt="B_t11 Heat Image">
+							</div>
 
+							Variation of pitch angle with time
+							<div style="display: flex; justify-content: center;">
+								<img width=75% src="animations/P_b11.gif">
+							</div>
+							<div style="display: flex; justify-content: center;">
+								<img width=75% src="images_sim/P_b11_heat.png">
+							</div>
+							<h3 id="c12"><a class="anchor-link" href="#c12">Case:2</a></h3>
+							<p>
+								\(\beta=34pc^2/Myr\)<br>
+								Seed Field:<br>
+								<div style="display: flex; justify-content: center;">
+									<img width="75%" src="images_sim/seed_field12.png" alt="Seed Field Image">
+								</div>
+								Variation of \(B_{total}\) with time<br>
+								<div style="display: flex; justify-content: center;">
+									<img width="75%" src="animations/B_t12.gif" alt="B_t11 Animation">
+								</div>
+								<div style="display: flex; justify-content: center;">
+									<img width="75%" src="images_sim/B_t12_heat.png" alt="B_t11 Heat Image">
+								</div>
+								Decay rate:0.0380
+								<div style="display: flex; justify-content: center;">
+									<img width="75%" src="images_sim/decay_rate12.png" alt="B_t11 Heat Image">
+								</div>
+								Variation of pitch angle with time
+								<div style="display: flex; justify-content: center;">
+									<img width=75% src="animations/P_b12.gif">
+								</div>
+								<div style="display: flex; justify-content: center;">
+									<img width=75% src="images_sim/P_b12_heat.png">
+								</div>
+							
+						</p>
+					</article>
+				</div>
 				</div>
 				<section id="part2">
 					<header>
-						<h2><strong><a href="#P2">Part 2</a></strong></h2>
+						<h2 id="p2"><strong><a class="anchor-link" href="#p2">Part 2</a></strong></h2>
 						
 					</header>
 				</section>
@@ -136,7 +196,7 @@
 
 				<article id="main" class="container special">
 					<header>
-						<h2><a href="#T2">Theory</a></h2>
+						<h2 id="t2"><a href="#t2">Methods</a></h2>
 					</header>
 					<p>Like in the previous section we start with the mean-field equation
 						$$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\alpha\bar{B} -\beta\nabla\times\bar{B})$$</p>
@@ -156,74 +216,96 @@
 						<h3 id="Numerical-Integration"><a class="anchor-link" href="#Numerical-Integration">Numerical Integration</a></h3><p>Discretized form of the equations are
 						$$ \frac{\bar{B}^{\:\: j+1}_{r\:i} - \bar{B}^{\:\: j}_{r\:i}}{dt} = -\dfrac{\alpha}{2} \: \left( \frac{\bar{B}^{\:\:\: j+1}_{\phi\:i+1} - \bar{B}^{\:\:\: j+1}_{\phi\:i}}{dz} + \frac{\bar{B}^{\:\:\: j}_{\phi\:i+1} - \bar{B}^{\:\:\: j}_{\phi\:i}}{dz} \right)+\dfrac{\beta}{2} \: \left( \dfrac{\bar{B}^{\:\: j+1}_{r\:i+1} - 2\bar{B}^{\:\: j+1}_{r\:i} + \bar{B}^{\:\: j+1}_{r\:i-1}}{dz^2} + \dfrac{\bar{B}^{\:\: j}_{r\:i+1} - 2\bar{B}^{\:\: j}_{r\:i} + \bar{B}^{\:\: j}_{r\:i-1}}{dz^2} \right) $$
 						$$ \frac{\bar{B}^{\:\:\: j+1}_{\phi\:i} - \bar{B}^{\:\:\: j}_{\phi\:i}}{dt} = -q\Omega \frac{\bar{B}^{\:\: j+1}_{r\:i}+\bar{B}^{\:\: j}_{r\:i}}{2} + \dfrac{\beta}{2} \: \left( \dfrac{\bar{B}^{\:\:\: j+1}_{\phi\:i+1} - 2\bar{B}^{\:\:\: j+1}_{\phi\:i} + \bar{B}^{\:\:\: j+1}_{\phi\:i-1}}{dz^2} + \dfrac{\bar{B}^{\:\:\: j}_{\phi\:i+1} - 2\bar{B}^{\:\:\: j}_{\phi\:i} + \bar{B}^{\:\:\: j}_{\phi\:i-1}}{dz^2} \right) $$
-						$$ Q = \left[\begin{array}{cc} \left[\begin{array}{ccccc}1-2 \rho & \rho & 0 & \cdots & 0 \\ \rho & 1-2 \rho & \rho & \ddots & \vdots \\ 0 & \rho & 1-2 \rho & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & \rho \\ 0 & \cdots & 0 & \rho & 1-2 \rho\end{array}\right] & 
-						\left[\begin{array}{ccccc} \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) & -\mu\alpha_i & 0 & \cdots & 0 \\ 0 & \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) & -\mu\alpha_i & \ddots & \vdots \\ 0 & 0 & \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & -\mu\alpha_i \\ 0 & \cdots & 0 & 0 & \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) \end{array}\right] \\ & \\
-						\left[\begin{array}{ccccc} -\dfrac{dt\: q \Omega}{2} & 0 & 0 & \cdots & 0 \\ 0 & -\dfrac{dt\: q \Omega}{2} & 0 & \ddots & \vdots \\ 0 & 0 & -\dfrac{dt\: q \Omega}{2} & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & 0 \\ 0 & \cdots & 0 & 0 & -\dfrac{dt\: q \Omega}{2} \end{array}\right] & 
-						\left[\begin{array}{ccccc}1-2 \rho & \rho & 0 & \cdots & 0 \\ \rho & 1-2 \rho & \rho & \ddots & \vdots \\ 0 & \rho & 1-2 \rho & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & \rho \\ 0 & \cdots & 0 & \rho & 1-2 \rho\end{array}\right] \end{array}\right] $$
+						These equations can be written in matrix form as:
+						$$ PU^{j+1} = QU^{j} $$<br>
+						where U=\(\left[\begin{array}{cc}\bar{B}_r \\ \bar{B}_{phi}\end{array}\right]\)
+						$$ P = \left[\begin{array}{cc} \left[\begin{array}{ccccc}1+2 \nu & -\nu & 0 & \cdots & 0 \\ -\nu & 1+2 \nu & -\nu & \ddots & \vdots \\ 0 & -\nu & 1+2 \nu & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & -\nu \\ 0 & \cdots & 0 & -\nu & 1+2 \nu\end{array}\right] & 
+\left[\begin{array}{ccccc} \left( \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i - \mu \alpha_i \right) & \mu & 0 & \cdots & 0 \\ 0 & \left( \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i - \mu \alpha_i \right) & \mu & \ddots & \vdots \\ 0 & 0 & \left( \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i - \mu \alpha_i \right) & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & \mu \\ 0 & \cdots & 0 & 0 & \left( \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i - \mu \alpha_i \right) \end{array}\right] \\ & \\
+\left[\begin{array}{ccccc} \dfrac{dt\: q \Omega}{2} & 0 & 0 & \cdots & 0 \\ 0 & \dfrac{dt\: q \Omega}{2} & 0 & \ddots & \vdots \\ 0 & 0 & \dfrac{dt\: q \Omega}{2} & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & 0 \\ 0 & \cdots & 0 & 0 & \dfrac{dt\: q \Omega}{2} \end{array}\right] & 
+\left[\begin{array}{ccccc}1+2 \nu & -\nu & 0 & \cdots & 0 \\ -\nu & 1+2 \nu & -\nu & \ddots & \vdots \\ 0 & -\nu & 1+2 \nu & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & -\nu \\ 0 & \cdots & 0 & -\nu & 1+2 \nu\end{array}\right] \end{array}\right] $$
+						and
+						$$ Q = \left[\begin{array}{cc} \left[\begin{array}{ccccc}1-2 \nu & \nu & 0 & \cdots & 0 \\ \nu & 1-2 \nu & \nu & \ddots & \vdots \\ 0 & \nu & 1-2 \nu & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & \nu \\ 0 & \cdots & 0 & \nu & 1-2 \nu\end{array}\right] & 
+\left[\begin{array}{ccccc} \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) & -\mu & 0 & \cdots & 0 \\ 0 & \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) & -\mu & \ddots & \vdots \\ 0 & 0 & \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & -\mu \\ 0 & \cdots & 0 & 0 & \left( - \dfrac{1}{2} \left. \dfrac{d \alpha}{dz}\right \vert_i + \mu \alpha_i \right) \end{array}\right] \\ & \\
+\left[\begin{array}{ccccc} -\dfrac{dt\: q \Omega}{2} & 0 & 0 & \cdots & 0 \\ 0 & -\dfrac{dt\: q \Omega}{2} & 0 & \ddots & \vdots \\ 0 & 0 & -\dfrac{dt\: q \Omega}{2} & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & 0 \\ 0 & \cdots & 0 & 0 & -\dfrac{dt\: q \Omega}{2} \end{array}\right] & 
+\left[\begin{array}{ccccc}1-2 \nu & \nu & 0 & \cdots & 0 \\ \nu & 1-2 \nu & \nu & \ddots & \vdots \\ 0 & \nu & 1-2 \nu & \ddots & 0 \\ \vdots & \ddots & \ddots & \ddots & \nu \\ 0 & \cdots & 0 & \nu & 1-2 \nu\end{array}\right] \end{array}\right] $$
 					</p>
 				</article>
-
-			</div>
-			<section id="part1">
-				<header>
-					<h2><strong><a href="#P1">Part 1</a></strong></h2>
-				</header>
-			</section>
-			<div class="wrapper style2">
-
+				<div class="wrapper style2"></div>
 				<article id="main" class="container special">
-					<header>
-						<h2><a href="#T1">Theory</a></h2>
-					</header>
-					<p>The mean field induction equation is given by:
-						$$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\epsilon -\eta\nabla\times\bar{B})$$
-						Taking the first order smoothing approximation we can write \(\epsilon=\alpha\bar{B}-\eta_t\nabla\times\bar{B}\)
-				   $$\frac{\partial \bar{B}}{\partial t}=\nabla \times (\bar{V}\times\bar{B}+\alpha\bar{B} -(\eta_t+\eta)\nabla\times\bar{B})$$<br>
-				   If we ignore the magnetic induction term and the alpha term diffusion equation can be writen as:
-					   $$\frac{\partial \bar{B}}{\partial t}=-\nabla \times \beta\nabla \times \bar{B}$$
-				   where \(\beta=\eta_t+\eta\).
-				   If we assume beta to be independent of position we can write:
-					   $$\beta\nabla \times \nabla \times \bar{B}=\beta\left[\nabla(\nabla\cdot \bar{B})-\nabla^2 \bar{B}\right]$$
-				   Using the solenoidality condition \(\nabla\cdot B=0\) we get
-					$$\frac{\partial \bar{B}}{\partial t}=\beta\nabla^2 \bar{B}$$
-				   Writing the above equation componenet wise in cylindrical coordinates we get:
-				   $$ \frac{\partial \bar{B}_r}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_r\right)-\frac{2}{r^2}\frac{\partial \bar{B}_\phi}{\partial \phi}+\beta \frac{\partial^2 \bar{B}_r}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_r\right)\right],$$
-				   $$ \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_\phi\right)+\frac{2}{r^2}\frac{\partial \bar{B}_\phi}{\partial \phi}+\beta \frac{\partial^2 \bar{B}_\phi}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_\phi\right)\right],$$
-				   $$\frac{\partial \bar{B}_z}{\partial t}=\beta\frac{1}{r^2}\frac{\partial}{\partial \phi ^2}\left(\bar{B}_z\right)+\beta \frac{\partial^2 \bar{B}_z}{\partial z^2}+\beta \frac{\partial}{\partial r}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \bar{B}_z\right)\right],$$
-				   Assuming \(\bar{B}\) to be axisymmetric all terms with \(\frac{\partial}{\partial\phi}\) are zero<br>
-				   Given my project was to solve for variation of B along z I will also be neglecting all \(\frac{\partial}{\partial r}\) which gives us the following three equations
-				   $$\frac{\partial \bar{B}_r}{\partial t}=\beta\frac{\partial^2 \bar{B}_r}{\partial z^2},\qquad \frac{\partial \bar{B}_\phi}{\partial t}=\beta\frac{\partial^2 \bar{B}_\phi}{\partial z^2},\qquad \frac{\partial \bar{B}_z}{\partial t}=\beta\frac{\partial^2 \bar{B}_z}{\partial z^2}$$
-				   The magnetic diffusion coefficient \(\beta\) is given by,
-				   $$\beta\approx \frac{1}{3}\tau v_{rms}^2$$
-				   where typical values of faraday time and velocity for a galaxy are \(\tau\approx 10Myr\) \(v_{rms}\approx 10km/s\) respectively which when substituted in the above equation gives a typical value for \(\beta=34 pc^2/Myr\)</p>
-				   <h3 id="Total-Magnetic-field-magnitude-and-pitch-angle"><a class="anchor-link" href="#Total-Magnetic-field-magnitude-and-pitch-angle">Total Magnetic field magnitude and pitch angle</a></h3>
-				   <p>Let's define \(\bar{B}_{total}=\sqrt{\bar{B}_r^2+\bar{B}_\phi^2}\) we would be finding the variation of \(\bar{B}_{total}\) with time
-				   <br>We will also define pitch angle which is defined as \(P_b=tan^{-1}\left(\frac{\bar{B}_r}{\bar{B}_\phi}\right)\)</p>
-				   <h3 id="Magnetic-decay-constant"><a class="anchor-link" href="#Magnetic-decay-constant">Magnetic decay constant</a></h3>
-				   <p>The total magnetic field can be represented by the following equation
-				   $$\bar{B}_{total}(z,t)=\bar{B}(z)exp(\gamma t)$$<br>
-				   where \(\bar{B}(z)\) represents all the variation of magnetic field spatially and \(\gamma\) represents the magnetic decay constant which we will be calculating</p>
-				   <h3 id="Numerical-integration"><a class="anchor-link" href="#Numerical-integration">Numerical Integration</a></h3><p>To numerically solve this equation I will be using the Crank Nickolson method which is a combination of explicit and implicit meathods with which has the advantage of being unconditionally stable with with an error of \(\mathcal{O}(k^2)+\mathcal{O}(h^2)\) where k and h are the time step and spatial step size respectively.<br>
-				   Crank–Nicolson Method uses the average of both previous and present time-step to numerically solve the problem. The discretized form of the equation is as follows.
-				   $$ \frac{B^{j+1}_{i} - B^{j}_{i}}{dt} = \dfrac{\beta}{2} \: \left( \dfrac{B^{j+1}_{i+1} - 2B^{j+1}_{i} + B^{j+1}_{i-1}}{dz^2} \right) + \dfrac{\beta}{2} \: \left( \dfrac{B^{j}_{i+1} - 2B^{j}_{i} + B^{j}_{i-1}}{dz^2} \right) $$<br>where present time-step is represented by \((j+1)\) and the past time-step \((j)\) and \((i)\) denoted the spatial index of a particular grid point. Rearranging we get
-				   $$ B^{j+1}_{i} - \dfrac{\beta \: dt}{2 \: dz^2} \: \left( B^{j+1}_{i+1} - 2B^{j+1}_{i} + B^{j+1}_{i-1} \right) = B^{j}_{i} + \dfrac{\beta \: dt}{2 \: dz^2} \: \left( B^{j}_{i+1} - 2B^{j}_{i} + B^{j}_{i-1} \right) $$<br>
-				   The above equation can be written in matrix form to be,
-				   $$ PB^{j+1} = QB^{j} $$<br>
-				   where \(P\) and \(Q\) are matrices of the form,
-				   $$ P=\left[\begin{array}{ccccc}1+2 \sigma &amp; -\sigma &amp; 0 &amp; \cdots &amp; 0 \\ -\sigma &amp; 1+2 \sigma &amp; -\sigma &amp; \ddots &amp; \vdots \\ 0 &amp; -\sigma &amp; 1+2 \sigma &amp; \ddots &amp; 0 \\ \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; -\sigma \\ 0 &amp; \cdots &amp; 0 &amp; -\sigma &amp; 1+2 \sigma\end{array}\right]     \qquad \qquad      Q=\left[\begin{array}{ccccc}1-2 \sigma &amp; \sigma &amp; 0 &amp; \cdots &amp; 0 \\ \sigma &amp; 1-2 \sigma &amp; \sigma &amp; \ddots &amp; \vdots \\ 0 &amp; \sigma &amp; 1-2 \sigma &amp; \ddots &amp; 0 \\ \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \sigma \\ 0 &amp; \cdots &amp; 0 &amp; \sigma &amp; 1-2 \sigma\end{array}\right] $$<br>
-				   where \(\sigma=\dfrac{\beta \: dt}{2 \: dz^2}\)<br>
-				   \(B^{j+1}\) can be obtained by multiplying the matrix equation throughout with \(M^{-1}\) with resulting equation being
-				   $$B^{j+1} = P^{-1}QB^{j} $$<br></p>
-				   <p>The simulation grid is taken to be from -150 pc to 150 pc resembling the thickness of milky way galaxy disk which is around 1000 light years or 300pc with step size \(dz=0.1\)<br>
-				   <img style="width: 100%; height: auto;" alt="No description has been provided for this image" title="Image source: [https://thescientificodyssey.typepad.com/my-blog/2017/08/episode-339-harlow-shapley-and-finding-our-place-in-the-galaxy.html]" src="https://thescientificodyssey.typepad.com/.a/6a01b8d0788cce970c01b8d29d8bf6970c-pi"/><br>
-				   
-				   The temporal grid range is taken according to the seed field magnitude such that there are 100 steps within the temporal range</p>
-				</article>
+					<h2 id="r2" style="text-align: center;"><a class="anchor-link" href="#r2">Results</a></h2>
+					<h3 id="c21"><a class="anchor-link" href="#c21">Case:1</a></h3>
+					<p>
+						\(\beta=34pc^2/Myr\)<br>
+						Seed Field:<br>
+						<div style="display: flex; justify-content: center;">
+							<img width="75%" src="images_sim/seed_field21.png" alt="Seed Field Image">
+						</div>
+						Variation of \(B_{r}\) with time<br>
+						<div style="display: flex; justify-content: center;">
+							<img width="75%" src="animations/B_r21.gif" alt="B_t11 Animation">
+						</div>
+						Variation of \(B_{\phi}\) with time<br>
+						<div style="display: flex; justify-content: center;">
+							<img width="75%" src="animations/B_phi21.gif" alt="B_t11 Animation">
+						</div>
+						Variation of \(B_{total}\) with time<br>
+						<div style="display: flex; justify-content: center;">
+							<img width="75%" src="animations/B_t21.gif" alt="B_t11 Animation">
+						</div>
+						<div style="display: flex; justify-content: center;">
+							<img width="75%" src="images_sim/B_t21_heat.png" alt="B_t11 Heat Image">
+						</div>
+						Decay rate:0.0386
+						<div style="display: flex; justify-content: center;">
+							<img width="75%" src="images_sim/decay_rate21.png" alt="B_t11 Heat Image">
+						</div>
 
+						Variation of pitch angle with time
+						<div style="display: flex; justify-content: center;">
+							<img width=75% src="animations/P_b21.gif">
+						</div>
+						<h3 id="c22"><a class="anchor-link" href="#c22">Case:2</a></h3>
+						<p>
+							\(\beta=34pc^2/Myr\)<br>
+							Seed Field:<br>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="images_sim/seed_field22.png" alt="Seed Field Image">
+							</div>
+							Variation of \(B_{r}\) with time<br>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="animations/B_r22.gif" alt="B_t11 Animation">
+							</div>
+							Variation of \(B_{\phi}\) with time<br>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="animations/B_phi22.gif" alt="B_t11 Animation">
+							</div>
+							Variation of \(B_{total}\) with time<br>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="animations/B_t22.gif" alt="B_t11 Animation">
+							</div>
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="images_sim/B_t22_heat.png" alt="B_t11 Heat Image">
+							</div>
+							Decay rate:0.0380
+							<div style="display: flex; justify-content: center;">
+								<img width="75%" src="images_sim/decay_rate22.png" alt="B_t11 Heat Image">
+							</div>
+							Variation of pitch angle with time
+							<div style="display: flex; justify-content: center;">
+								<img width=75% src="animations/P_b22.gif">
+							</div>
+							Critical Dynamo number:5.87
+							<div style="display: flex; justify-content: center;">
+								<img width=75% src="images_sim/c_dynamo.png">
+							</div>
+					</p>
+				</article>
 			</div>
+			</div>
+			
 			<section id="part3">
 				<header>
-					<h2><strong><a href="#P3">Part 3</a></strong></h2>
+					<h2 id="p3"><strong><a class="anchor-link" href="#p3">Part 3</a></strong></h2>
 					
 				</header>
 			</section>
@@ -232,7 +314,7 @@
 
 			<article id="main" class="container special">
 				<header>
-					<h2><a href="#T3">Results</a></h2>
+					<h2 id="t3"><a href="#t3">Methods</a></h2>
 				</header>
 				<p>
 					In this section we will be comparing the solutions, accuracy, runtime for two different cases. In the first case we would be running the solver for just half-grid assuming quadrupolar symmetry. While in the second case we would be running the solver on the entire grid.
@@ -242,7 +324,7 @@
 		</div>
 		<section id="banner">
 			<header>
-				<h2><strong><a href="#Rf">References</a></strong></h2>
+				<h2 id="rf"><strong><a href="#ff">References</a></strong></h2>
 				<ol>
 					<li>Axel Brandenburg and Evangelia Ntormousi. 2023. Galactic Dynamos.
 						<em>Annual Review of Astronomy and Astrophysics</em> 61, Volume 61, 2023 (2023), 561–606.<a href="https://doi.org/10.1146/annurev-astro-071221-052807"> https://doi.org/10.1146/annurev-astro-071221-052807</a></li>
